@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>My first blog</title>
+    <url>/archives/1JMAWQT.html</url>
+    <content><![CDATA[<p>Welcome to my world!</p>
+<span id="more"></span>
+
+<h2 id="我今天干啥了呢"><a href="#我今天干啥了呢" class="headerlink" title="我今天干啥了呢"></a>我今天干啥了呢</h2><h3 id="就是在搞博客-哈哈哈"><a href="#就是在搞博客-哈哈哈" class="headerlink" title="就是在搞博客 哈哈哈"></a>就是在搞博客 哈哈哈</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+<p>Done!</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>

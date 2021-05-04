@@ -1,0 +1,85 @@
+<h1 id="hexo-related-popular-posts"><a href="#hexo-related-popular-posts" class="headerlink" title="hexo-related-popular-posts"></a>hexo-related-popular-posts</h1><p><a href="https://travis-ci.org/tea3/hexo-related-popular-posts"><img src="https://travis-ci.org/tea3/hexo-related-popular-posts.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/tea3/hexo-related-popular-posts?branch=master"><img src="https://img.shields.io/coveralls/tea3/hexo-related-popular-posts.svg" alt="Coverage Status"></a> <a href="http://badge.fury.io/js/hexo-related-popular-posts"><img src="https://badge.fury.io/js/hexo-related-popular-posts.svg" alt="NPM version"></a></p>
+<p>A hexo plugin that generates a list of links to related posts or popular posts.</p>
+<p><a href="https://photo-tea.com/p/tea-plantation-mtfuji/#relatedPosts">DEMO</a> | <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings">Wiki</a> | <a href="https://photo-tea.com/p/hexo-related-popular-posts/">Documents</a> | <a href="https://github.com/tea3/hexo-related-popular-posts/releases">Releases(Update)</a></p>
+<p><img src="src/img/hexo-rpp.png" alt="Screenshot"></p>
+<h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h3><p>If you are using an older hexo version, please use the follows version.<br>For example, if you using prior to hexo v5.0 now, please <code>npm install hexo-related-popular-posts@4.2.0</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">hexo version</th>
+<th align="left">this plugin version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">v3.2 or later</td>
+<td align="left">2.0.6</td>
+</tr>
+<tr>
+<td align="center">prior to v5.0</td>
+<td align="left">4.0.0</td>
+</tr>
+</tbody></table>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><ul>
+<li><p>Generate <a href="#simply-usage">related list of posts</a>.</p>
+<p>  Sort and extracted by <a href="#simply-usage">relevance of tags</a> and <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#advanced-related-posts-morphological-analysis">word relevance of contents</a>.</p>
+</li>
+<li><p>Generate <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#popular-posts">popular list of posts</a>.</p>
+<p>  Sort and extract in Google Analytics page view.</p>
+</li>
+<li><p>Generate <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#visitor-counter">Page Views information</a> in posts.</p>
+<p>  Gets and displays the Google Analytics page view.</p>
+</li>
+<li><p>Flexible customizable <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#hepler">option</a> and <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#customize-html">design</a></p>
+</li>
+<li><p><a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#cache">Improve production speed</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><pre><code class="bash">$ npm install hexo-related-popular-posts --save
+</code></pre>
+<p>If you occur <code>ERROR Plugin load failed:</code> error or <code>DTraceProviderBindings.node</code> error , please see below.</p>
+<ul>
+<li><a href="https://github.com/tea3/hexo-related-popular-posts/blob/master/.github/ISSUE_TEMPLATE.md">ISSUE_TEMPLATE</a></li>
+<li><a href="https://github.com/tea3/hexo-related-popular-posts/issues/1">DTraceProviderBindings.node issue #1</a></li>
+</ul>
+<hr>
+<h2 id="Simply-Usage"><a href="#Simply-Usage" class="headerlink" title="Simply Usage"></a>Simply Usage</h2><h3 id="1-Edit-your-theme"><a href="#1-Edit-your-theme" class="headerlink" title="1. Edit your theme"></a>1. Edit your theme</h3><p>First, add the following <code>popular_posts( {} , post )</code> helper tag in template file for article. For example , if you use <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> , add a tag <a href="https://github.com/hexojs/hexo-theme-landscape/blob/master/layout/_partial/article.ejs#L25">here</a>.</p>
+<pre><code class="ejs">  &lt;%-
+    popular_posts( {} , post )
+  %&gt;
+</code></pre>
+<p>Variable name <code>post</code> is different depending on theme. Helper tag can set <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#hepler">more option</a> and <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#customize-html">customize the design</a> . For detail , please see the wiki.</p>
+<p>Also , if you occur <code>Cannot read property &#39;tags&#39; of undefined</code> error , please refer to the follow as.</p>
+<ul>
+<li><a href="https://github.com/tea3/hexo-related-popular-posts/issues/4">Swig (e.g. hexo-theme-next)</a></li>
+<li><a href="https://github.com/tea3/hexo-related-popular-posts/issues/6">Ejs (e.g. hexo-theme-phantom)</a></li>
+</ul>
+<h3 id="2-Add-tags-in-markdown"><a href="#2-Add-tags-in-markdown" class="headerlink" title="2. Add tags in markdown"></a>2. Add tags in markdown</h3><p>If tags are included in the article, related articles can be displayed as a list. For example, add a tag like the following markdown file.</p>
+<pre><code>---
+title: Hello World
+tags:
+  - program
+  - diary
+  - web
+---
+Welcome to [Hexo](https://hexo.io/)! This is a sample article. Let&#39;s add some tags as above.
+...
+</code></pre>
+<p>The larger the number of matching tags, the more relevant articles are displayed as candidates. Otherside , <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#advanced-related-posts-morphological-analysis">advanced related posts</a> and <a href="https://github.com/tea3/hexo-related-popular-posts/wiki/More-Settings#popular-posts">popular posts</a> can be displayed. Please see the wiki .</p>
+<h3 id="3-Run-server"><a href="#3-Run-server" class="headerlink" title="3. Run server"></a>3. Run server</h3><p>Starts a local server. By default, this is at <code>http://localhost:4000/</code>.</p>
+<pre><code class="bash">$ hexo clean
+$ hexo server
+</code></pre>
+<hr>
+<h2 id="Thank-you-for-introduction"><a href="#Thank-you-for-introduction" class="headerlink" title="Thank you for introduction."></a>Thank you for introduction.</h2><ul>
+<li><a href="http://ccambo.gitlab.io/2017/04/19/Plugins-hexo-related-popular-posts-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/">Plugins hexo-related-popular-posts 설정하기 - MSFL::모리스 소프트웨어 공작소, IT Blog</a></li>
+<li><a href="https://yoshinorin.net/2016/11/03/hexo-blog-customize/">サイトをカスタマイズしました : タグクラウドプラグイン &amp; 関連記事表示プラグインの導入 &amp; 一部シェアボタン追加 - YoshinoriN’s Memento</a></li>
+<li><a href="http://8hagi.sakura.ne.jp/sblog/2017/02/11/hexo-related-post/">HEXOをカスタマイズしました(関連記事プラグイン導入とか)”&gt;HEXOをカスタマイズしました(関連記事プラグイン導入とか) - 可愛いを叫ぶブログ</a></li>
+<li><a href="https://azriton.github.io/2017/06/16/Hexo%E3%81%AB%E9%96%A2%E9%80%A3%E3%81%99%E3%82%8B%E8%A8%98%E4%BA%8B%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/">Hexo に 関連する記事のリストを追加する - Azriton’s blog</a></li>
+</ul>
+<h2 id="Thank-you-for-a-wonderful-plugin"><a href="#Thank-you-for-a-wonderful-plugin" class="headerlink" title="Thank you for a wonderful plugin."></a>Thank you for a wonderful plugin.</h2><ul>
+<li>Hexo : <a href="http://hexo.io/">http://hexo.io/</a></li>
+<li>ga-analytics : <a href="https://github.com/sfarthin/ga-analytics">https://github.com/sfarthin/ga-analytics</a></li>
+<li>kuromoji.js : <a href="https://github.com/takuyaa/kuromoji.js">https://github.com/takuyaa/kuromoji.js</a></li>
+</ul>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p>
