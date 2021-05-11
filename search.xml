@@ -1,19 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>My first blog</title>
-    <url>/archives/1JMAWQT.html</url>
-    <content><![CDATA[<p>Welcome to my world!</p>
-<span id="more"></span>
+    <title>markdown 基本语法</title>
+    <url>/archives/3QNSHJ8.html</url>
+    <content><![CDATA[<p>Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。</p>
+<p>注：标准语法一般在#后跟个空格再写文字。</p>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是一级标题</span></span><br><span class="line"><span class="comment">## 这是二级标题</span></span><br><span class="line"><span class="comment">### 这是三级标题</span></span><br><span class="line"><span class="comment">#### 这是四级标题</span></span><br><span class="line"><span class="comment">##### 这是五级标题</span></span><br><span class="line"><span class="comment">###### 这是六级标题</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="我今天干啥了呢"><a href="#我今天干啥了呢" class="headerlink" title="我今天干啥了呢"></a>我今天干啥了呢</h2><h3 id="就是在搞博客-哈哈哈"><a href="#就是在搞博客-哈哈哈" class="headerlink" title="就是在搞博客 哈哈哈"></a>就是在搞博客 哈哈哈</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<p>Done!</p>
+<p>效果：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><ul>
+<li>加粗</li>
+</ul>
+<p>要加粗的文字分别用两个*号包起来</p>
+<ul>
+<li>斜体</li>
+</ul>
+<p>要加粗的文字分别用一个*号包起来</p>
+<ul>
+<li>斜体加粗</li>
+</ul>
+<p>要加粗的文字分别用三个*号包起来</p>
+<ul>
+<li>删除线</li>
+</ul>
+<p>要加粗的文字分别用两个~号包起来</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">**这是加粗的文字**</span><br><span class="line">*这是倾斜的文字*</span><br><span class="line">***这是斜体加粗的文字***</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><strong>这是加粗的文字</strong></p>
+<p><em>这是倾斜的文字</em></p>
+<p><em><strong>这是斜体加粗的文字</strong></em></p>
+<p><del>这是加删除线的文字</del></p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;n个… 貌似可以一直加下去</p>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个或者三个以上的 - 或者 * 都可以。</p>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：<br>可以看到，显示效果是一样的。</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>语法：</p>
+<p>总结了3种方法。直接插入，编辑大小和缩放。<br>、</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1.![图片alt](图片地址 <span class="string">&#x27;&#x27;</span>图片title<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">2. &lt;img src=<span class="string">&quot;path&quot;</span> width = <span class="string">&quot;xx&quot;</span> height = <span class="string">&quot;xx&quot;</span> alt=<span class="string">&quot;alt&quot;</span> align=center /&gt;</span><br><span class="line">3.&lt;img src=<span class="string">&quot;path&quot;</span> style=<span class="string">&quot;zoom:xx%&quot;</span> alt=<span class="string">&quot;alt&quot;</span> align=center /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![这是一个图片插入示例](&#x2F;images&#x2F;test.jpg &quot;背景&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/test.jpg" alt="这是一个图片插入示例" title="背景"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&#x2F;images&#x2F;test.jpg&quot; width &#x3D; &quot;300&quot; height &#x3D; &quot;200&quot; alt&#x3D;&quot;background pic&quot; align&#x3D;center &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<img src="/images/test.jpg" width = "300" height = "200" alt="background pic" align=center />
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&#x2F;images&#x2F;test.jpg&quot; style&#x3D;&quot;zoom:10%&quot; alt&#x3D;&quot;background pic&quot; align&#x3D;center &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<img src="/images/test.jpg" style="zoom:10%" alt="background pic" align=center />
+
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>语法</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址 <span class="string">&quot;超链接title&quot;</span>)</span><br><span class="line">title可加可不加</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[百度](http://baidu.com)</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><a href="http://baidu.com/">百度</a></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>语法：<br>无序列表 - + * 任意一种都可以</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line"></span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>语法：</p>
+<p>数字加点</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 列表内容</span><br><span class="line">2. 列表内容</span><br><span class="line">3. 列表内容</span><br><span class="line"></span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容</li>
+</ol>
+<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p><strong>上一级和下一级之间敲3个空格即可</strong></p>
+<ul>
+<li>列表内容<ul>
+<li>列表内容</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>列表内容<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+</ol>
+</li>
+</ul>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br><span class="line"></span><br><span class="line">第二行分割表头和内容。</span><br><span class="line">- 有一个就行，为了对齐，多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">-两边加：表示文字居中</span><br><span class="line">-右边加：表示文字居右</span><br><span class="line">注：原生的语法两边都要用 | 包起来。此处省略</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">姓名|技能|排行</span><br><span class="line">--|:--:|--:</span><br><span class="line">刘备|哭|大哥</span><br><span class="line">关羽|打|二哥</span><br><span class="line">张飞|骂|三弟</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th align="center">技能</th>
+<th align="right">排行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>刘备</td>
+<td align="center">哭</td>
+<td align="right">大哥</td>
+</tr>
+<tr>
+<td>关羽</td>
+<td align="center">打</td>
+<td align="right">二哥</td>
+</tr>
+<tr>
+<td>张飞</td>
+<td align="center">骂</td>
+<td align="right">三弟</td>
+</tr>
+</tbody></table>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>语法：</p>
+<p>单行代码：代码之间分别用一个反引号包起来</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;代码内容&#96;</span><br></pre></td></tr></table></figure>
+
+<p>代码块：</p>
+<p>代码之间分别用三个反引号包起来，且两边的反引号单独占一行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(&#96;&#96;&#96;)</span><br><span class="line">  代码...</span><br><span class="line">  代码...</span><br><span class="line">  代码...</span><br><span class="line">(&#96;&#96;&#96;)</span><br><span class="line"></span><br><span class="line">注：为了防止转译，前后三个反引号处加了小括号，实际是没有的。这里只是用来演示，实际中去掉两边小括号即可。</span><br></pre></td></tr></table></figure>
+
+
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>工具</category>
+        <category>Markdown</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
 </search>
