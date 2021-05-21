@@ -317,10 +317,10 @@
 <script>
 NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
-    new Valine(Object.assign({"enable":true,"appId":"vBhhvY0OsHfCGWjEyYXBVMVf-gzGzoHsz","appKey":"z7N6Cqr5SesusznGdm1Adde7","serverURLs":"https://feilive.site/","placeholder":"欢迎评论哦~~~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","visitor":true,"comment_count":true,"recordIP":true,"enableQQ":false,"requiredFields":[],"notify":false,"verify":true}, {
+    new Valine(Object.assign({"enable":true,"appId":"vBhhvY0OsHfCGWjEyYXBVMVf-gzGzoHsz","appKey":"z7N6Cqr5SesusznGdm1Adde7","serverURLs":"https://feilive.site","placeholder":"欢迎评论哦~~~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","visitor":false,"comment_count":true,"recordIP":true,"enableQQ":false,"requiredFields":[],"notify":false,"verify":false}, {
       el: '#valine-comments',
       path: "/archives/2021/05/",
-      serverURLs: "https://feilive.site/"
+      serverURLs: "https://feilive.site"
     }));
   }, window.Valine);
 });
